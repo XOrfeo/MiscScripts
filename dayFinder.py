@@ -45,6 +45,10 @@ centuryOffset = {1:4,2:2,3:0,0:6}
 
 counter = int((date.year%100)/4) + date.day + monthKey[date.month] + centuryOffset[int(date.year/100)%4] + (date.year%100)
 
+if date.month in [1,2]:
+    if isLeapYear(date.year):
+        counter = counter -1
+
 offset = counter % 7
 
 print (date,"will be a",DOWList[offset-1])

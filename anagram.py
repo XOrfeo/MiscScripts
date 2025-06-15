@@ -57,7 +57,11 @@ for word in wordList:
 	if len(word) == anagram_length:
 		lengthFilteredWordList.append(word)
 
-lengthFilteredWordList.remove("".join(anagram[0]))
+try:
+	lengthFilteredWordList.remove("".join(anagram[0]))
+except:
+	pass 
+
 lengthFilteredWordList_Count = len(lengthFilteredWordList)
 
 # stamps = tomato
